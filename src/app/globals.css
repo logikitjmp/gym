@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: 247 248 244;
+  --foreground: 5 5 7;
+  --muted: 101 112 115;
+  --panel: 255 255 255;
+  --line: 226 230 220;
+  --accent: 183 255 42;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 5 5 7;
+  --foreground: 247 248 244;
+  --muted: 148 161 161;
+  --panel: 12 16 18;
+  --line: 43 51 45;
+  --accent: 183 255 42;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(183, 255, 42, 0.16), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.12), transparent 24%),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(183, 255, 42, 0.45);
+  color: #050507;
+}
+
+.glass {
+  border: 1px solid rgba(var(--line), 0.8);
+  background: rgba(var(--panel), 0.74);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(24px);
+}
+
+.dark .glass {
+  background: rgba(var(--panel), 0.68);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+}
+
+.premium-grid {
+  background-size: 44px 44px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
